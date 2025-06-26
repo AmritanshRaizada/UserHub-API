@@ -6,7 +6,7 @@ services:
     ports:
       - "5050:5000"
     env_file:
-      - .env
+      - .env  # Loads MONGO_URI from your local .env
     volumes:
-      - .:/app
+      - .:/app  # Sync code for live reload
     restart: unless-stopped
