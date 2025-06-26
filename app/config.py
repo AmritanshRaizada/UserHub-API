@@ -1,4 +1,5 @@
 import os
 
 class Config:
-    MONGO_URI = os.getenv("MONGO_URI", "mongodb://mongo:27017/users_db")
+    MONGO_URI = os.getenv("MONGO_URI")
+    FLASK_ENV = os.getenv("FLASK_ENV", "development")

@@ -4,13 +4,13 @@ services:
   flask:
     build: .
     ports:
-      - "5050:5000"         # Host:Container
-    environment:
-      - FLASK_ENV=development
+      - "5050:5000"
+    env_file:
+      - .env  # 👈 Load environment variables from .env file
     depends_on:
       - mongo
     volumes:
-      - .:/app              # Bind mount your code for live updates
+      - .:/app
     restart: unless-stopped
 
   mongo:
