@@ -1,0 +1,44 @@
+# Byte-compiled / cache files
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environment
+venv/
+env/
+ENV/
+.venv/
+
+# Environment variables
+*.env
+.env.*
+.env
+
+# Docker
+*.log
+*.pid
+docker-compose.override.yml
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# IDEs / Editors
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Coverage / Testing
+.coverage
+htmlcov/
+pytest_cache/
+
+# MongoDB dump files (if any)
+*.bson
+*.json
+dump/
+
+# Misc
+*.swp
+*.bak

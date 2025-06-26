@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  flask:
+    build: .
+    ports:
+      - "5050:5000"         # Host:Container
+    environment:
+      - FLASK_ENV=development
+    depends_on:
+      - mongo
+    volumes:
+      - .:/app              # Bind mount your code for live updates
+    restart: unless-stopped
+
+  mongo:
+    image: mongo:latest
+    container_name: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    restart: unless-stopped
+
+volumes:
+  mongo_data:

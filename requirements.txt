@@ -1,0 +1,8 @@
+Flask
+flask-pymongo
+pymongo
+flask-restful
+marshmallow
+python-dotenv
+pytest
+Werkzeug
