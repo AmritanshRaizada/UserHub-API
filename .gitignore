@@ -1,44 +1,42 @@
-# Byte-compiled / cache files
+# Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *.pyo
 
-# Virtual environment
+# Virtual environments
 venv/
 env/
-ENV/
 .venv/
+ENV/
 
-# Environment variables
-*.env
-.env.*
-.env
-
-# Docker
-*.log
-*.pid
-docker-compose.override.yml
-
-# OS-specific
+# macOS system files
 .DS_Store
-Thumbs.db
 
-# IDEs / Editors
+# VS Code
 .vscode/
-.idea/
-*.sublime-project
-*.sublime-workspace
 
-# Coverage / Testing
-.coverage
-htmlcov/
-pytest_cache/
+# Python dotenv
+.env
+*.env
 
-# MongoDB dump files (if any)
+# Logs
+*.log
+
+# Mongo dump files (if used)
+dump/
 *.bson
 *.json
-dump/
 
-# Misc
-*.swp
-*.bak
+# Docker
+*.pid
+*.pid.lock
+
+# Misc/unintended files
+CACHED
+=
+[flask]
+exporting
+naming
+resolve
+transferring
+unpacking
