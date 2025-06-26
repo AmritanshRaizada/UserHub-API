@@ -21,33 +21,27 @@ def get_user_by_id(user_id):
         return user
     return {}
 
-
-
 def create_new_user(data):
-<<<<<<< HEAD
-    # Check for duplicate email
-=======
-
->>>>>>> fde0473 (Remove LICENSE file)
+    # Check if email already exists
     existing_user = mongo.db.users.find_one({"email": data["email"]})
     if existing_user:
         return {"error": "User with this email already exists."}, 409
 
+    # Hash password
     data['password'] = generate_password_hash(data['password'])
+
+    # Create user object
     user = User(**data)
+
+    # Insert into DB
     mongo.db.users.insert_one(user.to_dict())
+
+    # Return user dict (excluding _id)
     return user.to_dict()
-    data['password'] = generate_password_hash(data['password'])
-    user_doc = {
-        "name": data["name"],
-        "email": data["email"],
-        "password": data["password"]
-    }
-    result = mongo.db.users.insert_one(user_doc)
-    user_doc["id"] = str(result.inserted_id)
-    return user_doc
 
 def update_user_by_id(user_id, data):
+    if "password" in data:
+        data["password"] = generate_password_hash(data["password"])
     mongo.db.users.update_one({"_id": ObjectId(user_id)}, {"$set": data})
     return get_user_by_id(user_id)
 
