@@ -125,8 +125,5 @@ curl -X DELETE http://localhost:5050/users/<id>
 
 ## 📄 License
 
-<<<<<<< HEAD
-This project is licensed under the MIT License.
-=======
 This project is licensed under the [MIT License](./LICENSE).
->>>>>>> fde0473 (Remove LICENSE file)
+
