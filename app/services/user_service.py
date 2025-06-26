@@ -24,7 +24,11 @@ def get_user_by_id(user_id):
 
 
 def create_new_user(data):
+<<<<<<< HEAD
     # Check for duplicate email
+=======
+
+>>>>>>> fde0473 (Remove LICENSE file)
     existing_user = mongo.db.users.find_one({"email": data["email"]})
     if existing_user:
         return {"error": "User with this email already exists."}, 409
